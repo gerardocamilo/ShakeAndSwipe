@@ -29,6 +29,15 @@ class ViewController: UIViewController {
         swipeDown.direction = UISwipeGestureRecognizerDirection.Down
         self.view.addGestureRecognizer(swipeDown)
         
+        
+        
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+        
+        if  event.subtype == UIEventSubtype.MotionShake {
+            println("Shake happened!")
+        }
     }
 
     func swiped(gestureRecognizer: UIGestureRecognizer){
